@@ -1,1 +1,1 @@
-# mongoose-i18n-2
+# mongoose-integer
