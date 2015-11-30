@@ -1,7 +1,7 @@
 {
 	"name": "mongoose-integer",
 	"version": "0.1.0",
-	"description": "Mongoose plugin to validate the presence of integer values within a Mongoose schema",
+	"description": "Mongoose plugin to validate integer values within a Mongoose schema",
 	"author": {
 		"name": "Matthias Fey",
 		"email": "matthias.fey@tu-dortmund.de",
@@ -30,7 +30,7 @@
 		"test": "mocha test"
 	},
 	"devDependencies": {
-		"mongoose": "^4.2.6",
+		"mongoose": "^4.2.8",
 		"mocha": "^2.3.4",
 		"should": "^7.1.1"
 	}
