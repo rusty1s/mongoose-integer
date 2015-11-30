@@ -24,7 +24,6 @@
 	"bugs": {
 		"url": "https://github.com/rusty1s/mongoose-integer/issues"
 	},
-	"engine": "node >= 0.4.0",
 	"main": "index.js",
 	"scripts": {
 		"test": "mocha test"
