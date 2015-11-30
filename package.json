@@ -1,0 +1,40 @@
+{
+	"name": "mongoose-integer",
+	"version": "0.1.0",
+	"description": "Mongoose plugin to validate the presence of integer values within a Mongoose schema",
+	"author": {
+		"name": "Matthias Fey",
+		"email": "matthias.fey@tu-dortmund.de",
+		"url": "https://github.com/rusty1s"
+	},
+	"keywords": [
+		"mongoose",
+		"integer",
+		"number",
+		"validate",
+		"validator",
+		"mongodb"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rusty1s/mongoose-integer.git"
+	},
+	"license": "MIT",
+	"readmeFilename": "README.md",
+	"bugs": {
+		"url": "https://github.com/rusty1s/mongoose-integer/issues"
+	},
+	"engine": "node >= 0.4.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha test"
+	},
+
+	"devDependencies": {
+		"mocha": "^2.3.4",
+		"should": "^7.1.1"
+	},
+	"peerDependencies": {
+		"mongoose": "^4.2.6"
+	}
+}
