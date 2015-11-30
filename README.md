@@ -34,7 +34,7 @@ You can pass through a custom error message as part of the optional `options` ar
 mySchema.plugin(integerValidator, { message: 'Error, expected {PATH} to be an integer.' });
 ```
 
-You can also pass a specific error message as a `string in your field declaration:
+You can also pass a specific error message as a `string` in your field declaration:
 
 ```js
 var mySchema = new mongoose.Schema({
