@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var should = require('should');
 
 var helper = require('../helper');
-var mongooseInteger = require('../../index');
+var integerValidation = require('../index');
 
 module.exports = function() {
 
@@ -13,7 +13,7 @@ module.exports = function() {
 		afterEach(helper.afterEach);
 
 		it('throws error if value is not an integer', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer({
 				value: 0.5
@@ -24,7 +24,7 @@ module.exports = function() {
 		});
 
 		it('does not throw error if value is an integer', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer({
 				value: 1
@@ -35,7 +35,7 @@ module.exports = function() {
 		});
 
 		it('does not throw error when value is not set', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer().save(function(err) {
 				should.not.exist(err);
@@ -44,7 +44,7 @@ module.exports = function() {
 		});
 
 		it('should only throw error on number types', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerStringSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerStringSchema().plugin(integerValidation));
 
 			new Integer({
 				value: '0.5'
@@ -55,7 +55,7 @@ module.exports = function() {
 		});
 
 		it('throws error if value is not an integer in nested object', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerNestedObjectSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerNestedObjectSchema().plugin(integerValidation));
 
 			new Integer({
 				nested: {
@@ -68,7 +68,7 @@ module.exports = function() {
 		});
 
 		it('throws error if value is not an integer in nested array object', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerNestedObjectArraySchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerNestedObjectArraySchema().plugin(integerValidation));
 
 			new Integer().save(function(err) {
 				should.not.exist(err);
@@ -90,7 +90,7 @@ module.exports = function() {
 		});
 
 		it('throws error if value is not an integer in nested nested array object', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerNestedNestedObjectArraySchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerNestedNestedObjectArraySchema().plugin(integerValidation));
 
 			new Integer({
 				nested: [{
@@ -143,7 +143,7 @@ module.exports = function() {
 		});
 
 		it('should allow additional custom validation', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerValidationSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerValidationSchema().plugin(integerValidation));
 
 			new Integer({
 				value: 6.5

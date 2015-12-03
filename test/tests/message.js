@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var should = require('should');
 
 var helper = require('../helper');
-var mongooseInteger = require('../../index');
+var integerValidation = require('../index');
 
 module.exports = function() {
 
@@ -13,7 +13,7 @@ module.exports = function() {
 		afterEach(helper.afterEach);
 
 		it('should use default validation message', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer({
 				value: 0.5
@@ -25,7 +25,7 @@ module.exports = function() {
 		});
 
 		it('should use custom message via options', function(done) {
-			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(mongooseInteger, {
+			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation, {
 				message: 'Path: {PATH}, value: {VALUE}, type: {TYPE}'
 			}));
 
@@ -39,7 +39,7 @@ module.exports = function() {
 		});
 
 		it('should use custom message from schema configuration', function(done) {
-			var Integer = mongoose.model('Integer', helper.createCustomIntegerSchema().plugin(mongooseInteger, {
+			var Integer = mongoose.model('Integer', helper.createCustomIntegerSchema().plugin(integerValidation, {
 				message: 'Path: {PATH}, value: {VALUE}, type: {TYPE}'
 			}));
 
