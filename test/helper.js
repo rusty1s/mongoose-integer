@@ -68,7 +68,6 @@ module.exports = {
 				}]
 			}]
 		});
-
 	},
 
 	createIntegerNestedSchema: function() {
