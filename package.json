@@ -1,6 +1,6 @@
 {
 	"name": "mongoose-integer",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Mongoose plugin to validate integer values within a Mongoose schema",
 	"author": {
 		"name": "Matthias Fey",

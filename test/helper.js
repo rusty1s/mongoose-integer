@@ -125,5 +125,15 @@ module.exports = {
 				integer: 'Value is not an integer.'
 			}
 		});
+	},
+
+	createDefaultNullIntegerSchema: function() {
+		return new mongoose.Schema({
+			value: {
+				type: Number,
+				integer: true,
+				default: null
+			}
+		});
 	}
 };

@@ -16,6 +16,8 @@ module.exports = function(schema, options) {
 			}
 
 			schema.path(pathname).validate(function(value) {
+				if (!value) return true;
+
 				return parseInt(value) === value;
 			}, pathMessage);
 		}

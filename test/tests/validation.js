@@ -153,5 +153,15 @@ module.exports = function() {
 				done();
 			});
 		});
+
+		it('should throw no error on null values', function(done) {
+			var Integer = mongoose.model('Integer', helper.createDefaultNullIntegerSchema().plugin(mongooseInteger));
+
+			new Integer().save(function(err) {
+				should.not.exist(err);
+
+				done();
+			});
+		});
 	});
 };
