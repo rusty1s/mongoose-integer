@@ -2,7 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-var mongooseInteger = require('../index');
+var integerValidation = require('../index');
 
 module.exports = {
 
@@ -93,7 +93,7 @@ module.exports = {
 			}
 		});
 
-		nestedSchema.plugin(mongooseInteger);
+		nestedSchema.plugin(integerValidation);
 
 		return new mongoose.Schema({
 			nested: [nestedSchema]
