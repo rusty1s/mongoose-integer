@@ -78,7 +78,7 @@ module.exports = {
 			}
 		});
 
-		nestedSchema.plugin(mongooseInteger);
+		nestedSchema.plugin(integerValidation);
 
 		return new mongoose.Schema({
 			nested: nestedSchema

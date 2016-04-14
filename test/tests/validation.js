@@ -13,7 +13,6 @@ module.exports = function() {
 		afterEach(helper.afterEach);
 
 		it('throws error if value is not an integer', function(done) {
-			console.log(integerValidation);
 			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer({
@@ -156,7 +155,7 @@ module.exports = function() {
 		});
 
 		it('should throw no error on null values', function(done) {
-			var Integer = mongoose.model('Integer', helper.createDefaultNullIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createDefaultNullIntegerSchema().plugin(integerValidation));
 
 			new Integer().save(function(err) {
 				should.not.exist(err);
