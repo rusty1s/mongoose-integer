@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var should = require('should');
 
 var helper = require('../helper');
-var integerValidation = require('../index');
+var integerValidation = require('../../index');
 
 module.exports = function() {
 

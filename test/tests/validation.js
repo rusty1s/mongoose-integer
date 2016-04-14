@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var should = require('should');
 
 var helper = require('../helper');
-var integerValidation = require('../index');
+var integerValidation = require('../../index');
 
 module.exports = function() {
 
@@ -13,6 +13,7 @@ module.exports = function() {
 		afterEach(helper.afterEach);
 
 		it('throws error if value is not an integer', function(done) {
+			console.log(integerValidation);
 			var Integer = mongoose.model('Integer', helper.createIntegerSchema().plugin(integerValidation));
 
 			new Integer({
