@@ -11,4 +11,6 @@ mongoose.connection.on('error', function() {
 describe('Mongoose Integer', function() {
 	require('./tests/validation')();
 	require('./tests/message')();
+	require('./tests/path')();
+	require('./tests/value')();
 });

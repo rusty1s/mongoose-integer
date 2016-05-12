@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var should = require('should');
 
 var helper = require('../helper');
-var integerValidation = require('../index');
+var integerValidation = require('../../index');
 
 module.exports = function() {
 
@@ -155,7 +155,7 @@ module.exports = function() {
 		});
 
 		it('should throw no error on null values', function(done) {
-			var Integer = mongoose.model('Integer', helper.createDefaultNullIntegerSchema().plugin(mongooseInteger));
+			var Integer = mongoose.model('Integer', helper.createDefaultNullIntegerSchema().plugin(integerValidation));
 
 			new Integer().save(function(err) {
 				should.not.exist(err);
