@@ -18,7 +18,7 @@ module.exports = function(schema, options) {
 			schema.path(pathname).validate(function(value) {
 				if (value && parseInt(value) !== value)
 					this.invalidate(pathname, pathMessage, value);
-			}, pathMessage);
+			}, pathMessage, 'integer');
 		}
 	};
 
